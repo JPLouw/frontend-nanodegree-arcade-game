@@ -1,6 +1,8 @@
-frontend-nanodegree-arcade-game
-===============================
+Copy all the files to a local drive and open index.html in your web browser
 
-Students should use this rubric: https://www.udacity.com/course/viewer#!/c-ud015/l-3072058665/m-3072588797
 
-for self-checking their submission.
+I referenced the following sites while completing this project:
+
+1) https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference
+2)https://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml
+3) Udacity forums

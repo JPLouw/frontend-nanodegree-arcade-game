@@ -80,7 +80,7 @@ var Engine = (function(global) {
      */
     function update(dt) {
         updateEntities(dt);
-        // checkCollisions();
+        checkCollisions();
     }
 
     /* This is called by the update function  and loops through all of the
@@ -97,6 +97,16 @@ var Engine = (function(global) {
         player.update();
     }
 
+	/*This function will check if the player occupies the same space as any 
+	 *of the enemy objects*/
+	function checkCollisions(){
+		allEnemies.forEach(function(enemy) {
+            if(player.checkCollision(enemy)){
+				player.moveToStart();
+			}
+        });
+	
+	}
     /* This function initially draws the "game level", it will then call
      * the renderEntities function. Remember, this function is called every
      * game tick (or loop of the game engine) because that's how games work -
@@ -108,7 +118,7 @@ var Engine = (function(global) {
          * for that particular row of the game level.
          */
         var rowImages = [
-                'images/water-block.png',   // Top row is water
+				'images/water-block.png',   // Top row is water
                 'images/stone-block.png',   // Row 1 of 3 of stone
                 'images/stone-block.png',   // Row 2 of 3 of stone
                 'images/stone-block.png',   // Row 3 of 3 of stone
@@ -182,3 +192,4 @@ var Engine = (function(global) {
      */
     global.ctx = ctx;
 })(this);
+
